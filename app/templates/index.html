@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: gray;
+        }
+    </style>
+    <title>Tela incial</title>
+</head>
+<body>
+    <h1 class="col-8 m-auto pt-2 pb-2 text-center">Usuarios Cadastrados</h1>
+    <table class="table table-dark text-center">
+        <th>ID</th>
+        <th>Login</th>
+        <th>Senha</th>
+        <th>Data de nascimento</th>
+    {% for dbs in db %}
+        <tr>
+            <th>{{dbs.id}}</th>
+            <td>{{dbs.login}}</td>
+            <td>{{dbs.senha}}</td>
+            <td>{{dbs.data_nascimento}}</td>
+            <td></td>
+        </tr>
+    {% endfor %}
+        
+    </table>
+    
+    <br>
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <a href="/form" class="btn btn-success">Cadastrar</a>
+    </div>
+
+
+</body>
+</html>
